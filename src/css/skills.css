@@ -1,0 +1,8 @@
+.star {
+    color: gold;
+    font-size: 18px;
+    margin-right: 2px;
+}
+.star.empty {
+    color: #ddd;
+}

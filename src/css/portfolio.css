@@ -1,0 +1,40 @@
+.portfolioitem ul li {
+    list-style-type: none; 
+    position: relative;
+    padding-left: 20px; 
+    align-items: center;
+    display: flex;
+  }
+  .portfolioitem ul{
+    padding-left: 20px;
+  }
+.portfolioitem ul li::before {
+
+content: '\2022'; 
+position: absolute;
+left: 0;
+font-size: 24px; 
+color: #222222; 
+}
+
+.descriptionContent p {
+  padding-bottom: 1.5rem !important;
+  margin:0px!important;
+}
+
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+  background-color: #f1f1f1;
+  
+  
+}
+.collapsible-btn{
+  cursor: pointer;
+}
+
+.collapsible-content p {
+  padding: 10px 0;
+}
