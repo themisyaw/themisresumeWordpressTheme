@@ -18,7 +18,7 @@
         </h5> 
         <div class="row mx-4 my-4">
                 <button class="px-4 py-2 mr-4  bg-white border-0 text-center shadow active-filter  rounded educationBtn">Education</button>
-                <button class="px-4 py-2 mx-4  bg-white border-0 text-center shadow   rounded workexperiencebtn">Work Experience</button>
+                <button class="px-4 py-2 mx-4  bg-white border-0 text-center shadow   rounded workexperiencebtn">1Work Experience</button>
                 <button class=" px-4 py-2 ml-4 bg-white border-0 text-center shadow  rounded portfoliobtn">Portfolio</button>
         </div>
     </div>
