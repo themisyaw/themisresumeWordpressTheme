@@ -8,7 +8,7 @@
                  class="responsive-img  " 
                  alt="<?php echo esc_attr($photo['alt']); ?>">
         <?php else: ?>
-            <p>No photo uploaded.</p>
+            <p>No photo uploaded..</p>
         <?php endif; ?>
     </div>
     <div class="col">
