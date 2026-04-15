@@ -14,6 +14,7 @@ class WorkExpFilter {
         })
         .then(posts => {
             this.WorkExpTimeline.innerHTML = '';
+            console.log('Fetched posts:', posts); // Debugging log
             
             posts.forEach(post => {
                
