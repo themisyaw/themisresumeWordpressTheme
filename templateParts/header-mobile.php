@@ -1,16 +1,25 @@
-<div class="col p-0 mb-3 bg-light list-group-item d-flex justify-content-center align-items-center border-0 text-center py-2">
-        <?php 
-        $photo = get_field('personal_photo'); // Gets the Array from ACF
+<div class="row p-0 mb-3 bg-light list-group-item d-flex justify-content-center align-items-center border-0 text-center py-2">
+        <div class="col-4">
+            <?php 
+          $photo = get_field('personal_photo'); // Gets the Array from ACF
+          
+          if ( !empty($photo) ): ?>
+              <img src="<?php echo esc_url($photo['url']); ?>" 
+                  class="responsive-img mobile-width" 
+                  alt="<?php echo esc_attr($photo['alt']); ?>">
+          <?php else: ?>
+              <p>No photo uploaded.</p>
+          <?php endif; ?>
+            
+        </div>
+        <div class="col-8">
+            <h2 class=" my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-left"><?php echo the_title() ?></h2>
+        </div>
         
-        if ( !empty($photo) ): ?>
-            <img src="<?php echo esc_url($photo['url']); ?>" 
-                 class="responsive-img mobile-width" 
-                 alt="<?php echo esc_attr($photo['alt']); ?>">
-        <?php else: ?>
-            <p>No photo uploaded.</p>
-        <?php endif; ?>
+
+        
     </div>
-<h2 class="mx-4 my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-center"><?php echo the_title() ?></h2>
+
 <!-- <div class="row mb-3 pl-3 mx-4 d-flex align-items-center justify-content-center text-center">
   <div class="col pl-0 mt-3 col-md-6 ">
     <h4 class="gray1 text-center">
