@@ -25,7 +25,7 @@ class WorkExpFilter {
                   <div class="col pl-0">   
                     <div class="p-4 rounded shadow">
                       <div class="col-12 p-0 justify-content-start">
-                        <h4 class="black2 bold">${post.title}</h4>                    
+                        <h5 class="black2 bold">${post.title}</h5>                    
                       </div>  
                       <div class="col px-0">
                         <div class="row col-12">
