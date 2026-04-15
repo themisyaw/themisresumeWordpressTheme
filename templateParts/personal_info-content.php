@@ -8,9 +8,9 @@
             $personalInfo->the_post();
         }
     ?>
-    <div class="my-5 p-4 shadow rounded">
+    <div class="my-2 my-lg-5 p-4 shadow rounded ">
       <div class="row  pl-3 pb-3 ">
-        <h4 class="bold black2">Personal Infromation</h4> 
+        <h4 class="bold black2">Personal Information</h4> 
       </div>
       <div class="row py-1 pl-3 ">
         <h6 class="bold black2">First name | </h6> 

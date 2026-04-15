@@ -13,7 +13,7 @@
 <h2 class="mx-4 my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-center"><?php echo the_title() ?></h2>
 <div class="row mb-3 pl-3 mx-4 d-flex align-items-center justify-content-center text-center">
   <div class="col pl-0 mt-3 col-md-6 ">
-    <h4 class="black2 bold">
+    <h4 class="gray1 text-center">
       <?php echo the_field('small_description') ?>
     </h4> 
   </div>
