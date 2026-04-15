@@ -4,7 +4,7 @@ class WorkExpFilter {
        
         this.WorkExpTimeline = document.querySelector('.timeline');
         this.addCategoryClickListener();
-        this.get_workExp('All');
+        this.get_workExp('all');
     }
    get_workExp(categoryName) {
     fetch(`${resumeCVData.root_url}/wp-json/custom/v1/posts?category=${categoryName}`)
