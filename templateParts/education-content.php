@@ -19,13 +19,13 @@
               <h6 class="gray2 mr-3 pl-sm-1"><?php the_field('institution_title'); ?></h6>
           </div>
           <div class="row">
-            <h6 class="bold black2 ">Location | </h6><h6 class="gray2 pl-1"><?php the_field('city__country'); ?></h6> 
+            <h6 class="bold black2 ">Location | </h6><h6 class="gray2 pl-1"><?php the_field('location'); ?></h6> 
           </div>
         </div>
         <div class="mt-2 pt-3 pb-4">
           <div class="row ">
               <h6 class="bold black2">From |</h6>
-              <h6 class="gray2 pl-1"><?php the_field('from_'); ?> </h6>                  
+              <h6 class="gray2 pl-1"><?php the_field('from'); ?> </h6>                  
           </div>
           <div class="row ">
               <h6 class="bold black2 ">To |</h6>

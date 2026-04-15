@@ -6,7 +6,7 @@ function university_post_types() {
   register_post_type('portfolio', array(
     
     'show_in_rest'=>true,
-    'supports'=>array('title','editor'),
+    'supports'=>array('title'),
     'rewrite' => array('slug' => 'portfolio'),
     'public' => true,
     'labels' => array(

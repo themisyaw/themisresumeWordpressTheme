@@ -37,7 +37,7 @@
                 get_template_part('templateParts/driving','content');
                 
             } else {
-                echo '<p>No work experiences found.</p>';
+                // echo '<p>No work experiences found.</p>';
             }
                 ?>
         </div>

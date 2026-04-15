@@ -25,6 +25,6 @@
         <?php
     } else {
         // If no posts are found
-        echo '<p>No work experiences found.</p>';
+        // echo '<p>No work experiences found.</p>';
     }
    
