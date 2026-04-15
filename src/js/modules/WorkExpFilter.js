@@ -7,11 +7,22 @@ class WorkExpFilter {
         this.get_workExp('all');
     }
    get_workExp(categoryName) {
-    fetch(`${resumeCVData.root_url}/wp-json/custom/v1/posts?category=${categoryName}`)
+// If category is 'All', don't send the query param, or send it as empty
+    const url = categoryName === 'All' 
+        ? `${resumeCVData.root_url}/wp-json/custom/v1/posts` 
+        : `${resumeCVData.root_url}/wp-json/custom/v1/posts?category=${categoryName}`;
+
+    fetch(url)
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
         })
+
+    // fetch(`${resumeCVData.root_url}/wp-json/custom/v1/posts?category=${categoryName}`)
+    //     .then(response => {
+    //         if (!response.ok) throw new Error('Network response was not ok');
+    //         return response.json();
+    //     })
         .then(posts => {
             this.WorkExpTimeline.innerHTML = '';
             console.log('Fetched posts:', posts); // Debugging log
