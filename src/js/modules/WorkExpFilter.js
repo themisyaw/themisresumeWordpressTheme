@@ -4,7 +4,7 @@ class WorkExpFilter {
        
         this.WorkExpTimeline = document.querySelector('.timeline');
         this.addCategoryClickListener();
-        this.get_workExp('all');
+        this.get_workExp('All');
     }
    get_workExp(categoryName) {
 // If category is 'All', don't send the query param, or send it as empty
