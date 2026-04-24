@@ -6,12 +6,24 @@ class ScrollSpy {
         
         this.navLinks = document.querySelectorAll(`${this.menuSelector} a`);
         this.sections = this.getSections();
-        
-        // The "Lock" mechanism
         this.isScrolling = false; 
 
         if (this.navLinks.length > 0) {
+            this.setInitialActive(); // Highlight the first item immediately
             this.init();
+        }
+    }
+
+    // New: Logic to set the first item as active on load
+    setInitialActive() {
+        const hash = window.location.hash;
+        if (hash) {
+            // If the user arrived via a link like mysite.com/#portfolio
+            this.updateActiveState(hash.replace('#', ''));
+        } else {
+            // Otherwise, default to the first link in the menu
+            const firstId = this.navLinks[0].getAttribute('href').replace('#', '');
+            this.updateActiveState(firstId);
         }
     }
 
@@ -25,7 +37,6 @@ class ScrollSpy {
     }
 
     init() {
-        // 1. Click Logic with Lock
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 const targetId = link.getAttribute('href');
@@ -33,8 +44,6 @@ class ScrollSpy {
 
                 if (targetElement) {
                     e.preventDefault();
-                    
-                    // ACTIVATE THE LOCK
                     this.isScrolling = true;
                     this.updateActiveState(targetId.replace('#', ''));
 
@@ -43,8 +52,6 @@ class ScrollSpy {
                         block: 'start'
                     });
 
-                    // DEACTIVATE THE LOCK after scroll finishes
-                    // We use a timeout or the 'scrollend' event
                     this.onScrollStop(() => {
                         this.isScrolling = false;
                     });
@@ -52,7 +59,6 @@ class ScrollSpy {
             });
         });
 
-        // 2. Observer Logic with Bypass
         const observerOptions = {
             root: null,
             rootMargin: this.offset,
@@ -60,7 +66,6 @@ class ScrollSpy {
         };
 
         const observer = new IntersectionObserver((entries) => {
-            // If we are currently in a "Click Scroll", ignore the observer updates
             if (this.isScrolling) return;
 
             entries.forEach(entry => {
@@ -73,15 +78,14 @@ class ScrollSpy {
         this.sections.forEach(section => observer.observe(section));
     }
 
-    // Helper to detect when smooth scroll actually finishes
     onScrollStop(callback) {
         let isScrolling;
         window.addEventListener('scroll', () => {
             window.clearTimeout(isScrolling);
             isScrolling = setTimeout(() => {
                 callback();
-            }, 100); // 100ms after the last scroll event, we assume it's stopped
-        }, { passive: true, once: false });
+            }, 100);
+        }, { passive: true });
     }
 
     updateActiveState(id) {
