@@ -1,4 +1,4 @@
-<section class="mx-4 educationSection">
+<section class=" educationSection">
   
     <h2 class="text-center py-4 border border-top-0 border-left-0 border-right-0 pb-2" id="education">Education and Training</h2>
     <?php   

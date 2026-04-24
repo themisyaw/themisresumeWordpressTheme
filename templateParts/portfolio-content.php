@@ -1,4 +1,4 @@
-<section class="mx-xs-2 mx-4 portfolioSection">
+<section class="mx-xs-2 mx-2 portfolioSection">
   <?php
     $portfolio = new WP_Query(array(
       'post_type' => 'portfolio',
@@ -6,7 +6,7 @@
     ));
   ?>
   <h2 class=" py-4 text-center border border-top-0 border-left-0 border-right-0" id="portfolio">Portfolio</h2>
-  <ul class="timeline mb-5">
+  <ul class="timeline pl-2 mb-5">
     <?php 
     while($portfolio->have_posts()) {
       $portfolio->the_post();

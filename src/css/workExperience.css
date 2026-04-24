@@ -8,7 +8,7 @@ ul.timeline {
     background: #d4d9df;
     display: inline-block;
     position: absolute;
-    left: 0px;
+    left: -10px;
     
     width: 2px;
     height: 100%;
@@ -22,7 +22,7 @@ ul.timeline {
     display: inline-block;
     position: absolute;
     border-radius: 50%;
-    left: -6.5px;
+    left: -16.5px;
     width: 15px;
     height: 15px;
     z-index: 400;

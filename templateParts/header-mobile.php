@@ -1,4 +1,4 @@
-<div class="row p-0 mb-3 bg-light list-group-item d-flex justify-content-center align-items-center border-0 text-center py-2">
+<div class="p-0 mb-3 bg-light list-group-item d-flex justify-content-center align-items-center border-0 text-center py-2">
         <div class="col-4">
             <?php 
           $photo = get_field('personal_photo'); // Gets the Array from ACF

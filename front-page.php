@@ -10,7 +10,7 @@
     <?php get_template_part( 'templateParts/header-desktop' ); ?>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid px-0">
     <div class="row mx-0">
         
         <div class="col-md-4 col-xl-3">
@@ -23,8 +23,9 @@
 
         <div class="col-md-8 col-xl-6 mt-5">
             <?php 
+                get_template_part('templateParts/work_experience','content');
                 get_template_part('templateParts/education','content');
-                get_template_part('templateParts/work_experience','content'); 
+                 
                 get_template_part('templateParts/portfolio','content'); 
             ?>
         </div>

@@ -35,7 +35,7 @@ class WorkExpFilter {
 
                 const element = `
                 <li class="row my-5 fade-in-element show">
-                  <div class="col pl-0">   
+                  <div class="col p-0">   
                     <div class="p-4 rounded shadow">
                       <div class="col-12 p-0 justify-content-start">
                         <h5 class="black2 bold">${post.title}</h5>                    

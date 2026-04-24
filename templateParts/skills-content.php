@@ -1,4 +1,4 @@
-<section class="mx-xs-2 mx-4 mb-4 pb-5 skillsSection">
+<section class="mx-xs-2  skillsSection">
     <div class="">
         <h2 class="text-center py-4 border border-top-0 border-left-0 border-right-0 pb-2" id="skills">Skills</h2>
         <div class="my-5 p-4  shadow rounded">

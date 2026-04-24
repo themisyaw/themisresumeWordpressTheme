@@ -1,4 +1,4 @@
-<section class="mx-xs-2 mx-4 workexperienceSection d-none">
+<section class="mx-xs-2 mx-2 workexperienceSection d-none">
   <?php
  $today = date('Y-m-d');
     $args = array(
@@ -45,7 +45,7 @@
         }
         ?>
     </div>
-    <ul class="timeline mb-5"> 
+    <ul class="timeline pl-4 mb-5"> 
     </ul>
     <?php 
     wp_reset_postdata();
