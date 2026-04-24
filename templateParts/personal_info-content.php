@@ -1,5 +1,5 @@
 
-<section class=" mx-xs-2 mx-4" >
+<section class=" mx-xs-2 " >
     <?php
         $personalInfo = new WP_Query(array(
             'post_type'=>'personalinformation',

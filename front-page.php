@@ -1,47 +1,42 @@
-<?php 
 
-get_header();
-if ( wp_is_mobile() ){
-    get_template_part( 'templateParts/header-mobile' ); 
-    get_template_part('templateParts/personal_info','content');
-    get_template_part('templateParts/work_experience','content');
-    get_template_part('templateParts/education','content');   
-    get_template_part('templateParts/portfolio','content'); 
-    get_template_part('templateParts/skills','content');
-   
-}else{ 
-    get_template_part( 'templateParts/header-desktop' ); 
-    ?>
-    <div class="container_fluid">
-        <div class="row mx-0">
-            <div class="col-xl-3 d-none d-xl-block  col-md-4">
-                <?php 
-                    get_template_part('templateParts/personal_info','content');
-                ?>
-            </div>
-            <div class="col-xl-3 col-md-4 d-none d-xl-none d-block">
-                <?php 
-                    get_template_part('templateParts/personal_info','content');
-                    get_template_part('templateParts/skills','content');
-                ?>
-            </div>
-            <div class="col-xl-6 col-md-7 mt-5">
-                <?php 
-                    get_template_part('templateParts/education','content');
-                    get_template_part('templateParts/work_experience','content'); 
-                    get_template_part('templateParts/portfolio','content'); 
-                ?>
-            </div>
-            <div class="d-none d-xl-block col-xl-3 col-md-4 mt-5">
-                <?php 
-                    get_template_part('templateParts/skills','content');
-                ?>
+
+<?php get_header(); ?>
+
+<div class="d-block d-md-none">
+    <?php get_template_part( 'templateParts/header-mobile' ); ?>
+</div>
+
+<div class="d-none d-md-block">
+    <?php get_template_part( 'templateParts/header-desktop' ); ?>
+</div>
+
+<div class="container-fluid">
+    <div class="row mx-0">
+        
+        <div class="col-md-4 col-xl-3">
+            <?php get_template_part('templateParts/personal_info','content'); ?>
+            
+            <div class="d-block d-xl-none">
+                <?php get_template_part('templateParts/skills','content'); ?>
             </div>
         </div>
+
+        <div class="col-md-8 col-xl-6 mt-5">
+            <?php 
+                get_template_part('templateParts/education','content');
+                get_template_part('templateParts/work_experience','content'); 
+                get_template_part('templateParts/portfolio','content'); 
+            ?>
+        </div>
+
+        <div class="d-none d-xl-block col-xl-3 mt-5">
+            <?php get_template_part('templateParts/skills','content'); ?>
+        </div>
+        
     </div>
-    <?php
-}
-    ?>
+</div>
+
+<?php get_footer(); ?>
 <script>
 jQuery(document).ready(function($) {
     var lastId;
