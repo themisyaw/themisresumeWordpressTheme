@@ -1,4 +1,4 @@
-<section class="mx-xs-2 mx-2 portfolioSection">
+<section class="mx-xs-2 mx-2 pb-4 mb-5 portfolioSection">
   <?php
     $portfolio = new WP_Query(array(
       'post_type' => 'portfolio',
