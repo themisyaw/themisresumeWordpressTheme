@@ -32,6 +32,9 @@
     <li class="list-group-item border-0 text-center my-2">
         <a class="nav-link p-0" href="#personalinfo"><i class="fa fa-user gray2 fa-lg <?php if(is_front_page()) echo 'current-menu-item'; ?>" aria-hidden="true"></i></a>  
     </li>
+    <li class="list-group-item border-0 text-center my-2 <?php if(is_post_type_archive('skills')) echo 'current-menu-item'; ?>">
+        <a class="nav-link p-0" href="#skills"><i class="fa fa-trophy gray2 fa-lg" aria-hidden="true"></i></a>
+    </li>
     <li class="list-group-item border-0 text-center my-2 <?php if(is_post_type_archive('workexperience')) echo 'current-menu-item'; ?>">
         <a class="nav-link p-0" href="#workExperience"><i class="fa fa-briefcase gray2 fa-lg" aria-hidden="true"></i></a>  
     </li>
@@ -41,8 +44,6 @@
     <li class="list-group-item border-0 text-center my-2 <?php if(is_post_type_archive('portfolio')) echo 'current-menu-item'; ?>">
         <a class="nav-link p-0" href="#portfolio"><i class="fa fa-folder-open-o fa-lg" aria-hidden="true"></i></a>
     </li>
-    <li class="list-group-item border-0 text-center my-2 <?php if(is_post_type_archive('skills')) echo 'current-menu-item'; ?>">
-        <a class="nav-link p-0" href="#skills"><i class="fa fa-trophy gray2 fa-lg" aria-hidden="true"></i></a>
-    </li>
+    
   </ul>
 </div>
