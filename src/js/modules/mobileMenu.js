@@ -76,6 +76,8 @@ class ScrollSpy {
         }, observerOptions);
 
         this.sections.forEach(section => observer.observe(section));
+
+        
     }
 
     onScrollStop(callback) {

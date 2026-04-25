@@ -12,7 +12,7 @@
                     $workExperiences->the_post();
                     ?>
                     <div class="row align-items-center py-2">
-                        <div class="col-6">
+                        <div class="col-7">
                             <h6 class="black2 bold m-0"><?php echo get_the_title(); ?></h6>
                         </div>
                         <div class="col">

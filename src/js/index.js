@@ -7,6 +7,7 @@ import ScrollSpy from "./modules/mobileMenu.js";
 const workExpFilterClass = new WorkExpFilter();
 
 const portfolio = new Portfolio();
-
+    
 const scrollSpy = new ScrollSpy();
+
 
