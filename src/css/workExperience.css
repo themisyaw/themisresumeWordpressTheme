@@ -31,7 +31,7 @@ ul.timeline {
  
   ul.timeline > li:before {
     content: ' ';
-    background: #222222;
+    background: var(--timeline-marker-color);
     display: inline-block;
     position: absolute;
     border-radius: 50%;
@@ -41,17 +41,13 @@ ul.timeline {
     z-index: 400;
     margin-top: 29px;
   }
-  .active-filter{
-    background-color: #222222!important;
-    color: white;
-    scale:1.1;
-    transition: 0.3s;
-  }
+ 
   .category-item:hover{
     cursor: pointer;
     
     
   }
+ 
   .smallFonts{
     font-size: 14px;
   }

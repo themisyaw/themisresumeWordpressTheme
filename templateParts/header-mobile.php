@@ -13,7 +13,7 @@
             
         </div>
         <div class="col-8">
-            <h1 class=" my-4 border h3 border-top-0 border-left-0 border-right-0 pb-2 text-left"><?php echo the_title() ?></h1>
+            <h1 class=" my-4 border h3 border-top-0 border-left-0 border-right-0 pb-2 text-left stay-black"><?php echo the_title() ?></h1>
         </div>
         
 

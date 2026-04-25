@@ -23,9 +23,8 @@
     ?>   
   </head>
   <body <?php body_class(); ?>>
-    <header class="site-header" id="personalinfo">
-    </header>
-   
+ 
+  
   
 
 

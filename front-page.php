@@ -2,15 +2,19 @@
 
 <?php get_header(); ?>
 
-<div class="d-block d-md-none">
+<button id="theme-switch" class=" btn-sm border-0 position-fixed top-0 start-0 m-1 z-3">
+    <span class="dark-icon">🌙</span>
+    <span class="light-icon">☀️</span>
+</button>
+<div class="d-block bg-light d-md-none">
     <?php get_template_part( 'templateParts/header-mobile' ); ?>
 </div>
 
-<div class="d-none d-md-block">
+<div class="d-none bg-light d-md-block">
     <?php get_template_part( 'templateParts/header-desktop' ); ?>
 </div>
 
-<div class="container-fluid px-0">
+<div class="container-fluid  px-0">
     <div class="row mx-0">
         
         <div class="col-md-4 col-xl-3">

@@ -22,7 +22,7 @@
             </div>
           </div>  
           <div class="row px-4 m-0">
-            <div class="row collapsible-content bg-white" id="content-toggle-<?php echo $post_id ?>">
+            <div class="row collapsible-content " id="content-toggle-<?php echo $post_id ?>">
               <div class="col">
                 <h6 class="descriptionContent"><?php echo get_field('description')?></h6> 
               </div>

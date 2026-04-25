@@ -1,5 +1,6 @@
 
-<section class=" mx-xs-2 " >
+<section class=" mx-xs-2 " id="personalinfo">
+  
     <?php
         $personalInfo = new WP_Query(array(
             'post_type'=>'personalinformation',
@@ -63,3 +64,12 @@
       </div> 
     </div> 
 </section>
+<script>
+    // Prevent "Flash of Unstyled Content"
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+</script>

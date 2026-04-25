@@ -12,7 +12,7 @@
         <?php endif; ?>
     </div>
     <div class="col">
-        <h2 class="mx-4 my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-start"><?php echo the_title() ?></h2>
+        <h2 class="mx-4 my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-start stay-black"><?php echo the_title() ?></h2>
         <!-- <h5 class="gray1 mx-4">
             <?php echo the_field('small_description') ?>
         </h5>  -->

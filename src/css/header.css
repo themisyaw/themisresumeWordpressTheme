@@ -57,6 +57,84 @@ body {
 
 }
 
+/* Default: Light Mode */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+    --theme-switcher-bg: #222222;
+    --text-fixed-black: #222222;
+    --btn-bg-fixed: #ffffff;
+    --btn-text-fixed: #212529;
+    --btn-shadow-fixed: 0 4px 6px rgba(0,0,0,0.1);
+    --timeline-marker-color: #222222;
+    --icondisplay-light: none;
+    --icondisplay-dark: block;
+    --ul-list-mobile-menu-bg:#ffffff8a;
+}
+.stay-black {
+    color: var(--text-fixed-black); /* Stays black even in dark mode */
+}
+#theme-switch{
+  z-index: 500;
+  background-color: var(--theme-switcher-bg) !important;
+  right: 0;
+  
+}
+.dark-icon{
+  display: var(--icondisplay-dark);
+  
+}
+
+.light-icon{
+  display: var(--icondisplay-light);
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+    --bg-color: #000000;
+    --text-color: #e0e0e0;
+    --card-bg: #222222;
+    --shadow: 0 4px 6px rgba(0,0,0,0.5);
+    --timeline-marker-color: #f8f9fa;
+    --icondisplay-light: block;
+    --icondisplay-dark: none;
+    --theme-switcher-bg: #ffffff;
+    --ul-list-mobile-menu-bg:#0000008a;
+}
+/* .filter-btn {
+    background-color: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+} */
+.active-filter{
+  background-color: #222222!important;
+  color:var(--btn-bg-fixed)!important;
+  scale:1.1;
+  transition: 0.3s;
+}
+
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.shadow {
+    background-color: var(--card-bg) ;
+    box-shadow: var(--shadow) ;
+}
+/* .shadow button {
+    background-color: var(--card-bg) !important;
+    box-shadow: var(--shadow) !important;
+} */
+
+h5, h6, .black2 {
+    color: var(--text-color) !important;
+}
 #menu a.active i {
 
   text-shadow: 0 0 10px #009aff!important;
@@ -66,7 +144,7 @@ body {
 }
 
 ul.list-group {
-  background-color:#ffffff8a;
+  background-color: var(--ul-list-mobile-menu-bg);
   display: flex;
   justify-content: space-around; 
   align-items: center; 
