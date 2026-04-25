@@ -59,7 +59,7 @@ body {
 ul{
   padding-left: 1rem;
   padding-right: 1rem;
-  list-style-type: disc;
+  list-style-type: disc!important;
 }
 li::marker {
   background: var(--timeline-marker-color);
