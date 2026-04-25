@@ -17,7 +17,7 @@
 <div class="container-fluid  px-0">
     <div class="row mx-0">
         
-        <div class="col-md-4 col-xl-3">
+        <div class="col-md-4 mt-5 col-xl-3">
             <?php get_template_part('templateParts/personal_info','content'); ?>
             
             <div class="d-block d-xl-none">

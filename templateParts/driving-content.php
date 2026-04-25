@@ -1,7 +1,7 @@
 
 <div class="row align-items-center py-3 mt-4">
   <div class="col-12">
-    <h4 class="pb-3 black1 bold black2" id="drivinglisence">Driving licenses</h4>
+    <h4 class="pb-3 black1 bold black2 text-center" id="drivinglisence">Driving licenses</h4>
   </div>
   
   
@@ -14,9 +14,9 @@ $drivinglicence = new WP_Query(array(
     while ($drivinglicence->have_posts()) {
         $drivinglicence->the_post();
        ?>
-       <div class="row col-12 py-1">
+       <div class="row col px-4 py-1">
           <div class="col-1">
-            <h6 class="black2 bold"><?php echo get_field('driving_licence'); ?> </h6>
+            <h6 class="black2 bold "><?php echo get_field('driving_licence'); ?> </h6>
           </div>
           <div class="col">
             <?php

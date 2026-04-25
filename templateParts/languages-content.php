@@ -1,6 +1,6 @@
 
 <div class=" py-3 mt-4">
-  <h4 class=" pb-3 bold black2" id="languages">Languages</h4>
+  <h4 class=" pb-3 bold black2  text-center" id="languages">Languages</h4>
   <?php
     $languages = new WP_Query(array(
         'post_type'=>'languages'
@@ -10,25 +10,25 @@
       $is_mother_tongues = get_field('mother_tongues');
       ?>       
       <div class="py-1 my-2    rounded "> 
-        <h5 class="mb-2 black2 bold language_title "><?php the_title(); ?></h5>
+        <h5 class="mb-2 black2 bold language_title"><?php the_title(); ?></h5>
         <?php
           if ($is_mother_tongues) {
-            echo '<h6 class="gray2">Mothers tongue</h6>';            
+            echo '<div class="row py-1 px-4 col"><h6 class="gray2 ">Mothers tongue</h6></div>';            
           } else {
           ?>
-            <div class="row py-1 col">
+            <div class="row py-1 px-4 col">
               <h6 class="bold black2">Listening |</h6><span class="ml-1 gray2"><?php the_field('listening'); ?> </span>
             </div>
-            <div class="row py-1 col">
+            <div class="row py-1 px-4 col">
               <h6 class="bold black2">Reading |</h6><span class="ml-1 gray2"><?php the_field('reading'); ?> </span>
             </div>
-            <div class="row py-1 col">
+            <div class="row py-1 px-4 col">
             <h6 class="bold black2">Writing |</h6><span class="ml-1 gray2"><?php the_field('writing'); ?> </span>
             </div>
-            <div class="row py-1 col">
+            <div class="row py-1 px-4 col">
               <h6 class="bold black2">Spoken production |</h6><span class="ml-1 gray2"><?php the_field('spoken_production'); ?> </span>
             </div>
-            <div class="row py-1 col">
+            <div class="row py-1 px-4 col">
               <h6 class="bold black2">Spoken interaction |</h6><span class="ml-1 gray2"><?php the_field('spoken_interaction'); ?> </span>
             </div>
             <?php
