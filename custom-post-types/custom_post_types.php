@@ -3,22 +3,22 @@
 
 function university_post_types() {
   //Portfolio
-  register_post_type('portfolio', array(
-    
-    'show_in_rest'=>true,
-    'supports'=>array('title'),
-    'rewrite' => array('slug' => 'portfolio'),
-    'public' => true,
-    'labels' => array(
-       'add_new'            => _x('Add New', 'Portfolio item'),
-       'name' => 'Portfolio',
-       'add_new_item' => 'Add Portfolio item',
-       'edit_item' => 'Edit Portfolio items',
-       'all_items' => 'All Portfolio items',
+ register_post_type('portfolio', array(
+    'show_in_rest' => true,
+    'supports' => array('title', 'thumbnail'), // Added 'thumbnail' for images
+    'rewrite'  => array('slug' => 'portfolio'),
+    'public'   => true,
+    'taxonomies' => array('category'), // This enables the standard Category box
+    'labels'   => array(
+       'add_new'       => _x('Add New', 'Portfolio item'),
+       'name'          => 'Portfolio',
+       'add_new_item'  => 'Add Portfolio item',
+       'edit_item'     => 'Edit Portfolio items',
+       'all_items'     => 'All Portfolio items',
        'singular_name' => 'Portfolio item'
     ),
     'menu_icon' => 'dashicons-portfolio'
-  ));
+));
  
   //certifications
   register_post_type('certifications', array(
