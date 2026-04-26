@@ -13,7 +13,7 @@
         <h5 class="mb-2 black2 bold language_title"><?php the_title(); ?></h5>
         <?php
           if ($is_mother_tongues) {
-            echo '<div class="row py-1 px-4 col"><h6 class="gray2 ">Mothers tongue</h6></div>';            
+            echo '<div class="row py-1 px-4 col"><h6 class="gray2 ">Mother tongue</h6></div>';            
           } else {
           ?>
             <div class="row py-1 px-4 col">
