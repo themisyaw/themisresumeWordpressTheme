@@ -14,8 +14,6 @@
     <div class="col">
         <h2 class="mx-4 my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-start stay-black"><?php echo the_title() ?></h2>
         
-            <?php echo the_field('small_description') ?>
-       
         <div class="row mx-4 my-4">
                 <button class="px-4 py-2 mr-4  bg-white border-0 text-center shadow active-filter  rounded educationBtn">Education</button>
                 <button class="px-4 py-2 mx-4  bg-white border-0 text-center shadow   rounded workexperiencebtn">Work Experience</button>
