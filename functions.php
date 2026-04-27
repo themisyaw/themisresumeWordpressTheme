@@ -50,11 +50,7 @@ function get_portfolio_items($data) {
     return $results;
 }
 
-function convert_to_star_rating($value) {
-  $value = max(0, min(100, $value));   
-  $stars = floor($value / 100 * 6);    
-  return $stars;
-}
+
 
 function resumeCV_files() {
   
