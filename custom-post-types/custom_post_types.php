@@ -5,10 +5,10 @@ function university_post_types() {
   //Portfolio
  register_post_type('portfolio', array(
     'show_in_rest' => true,
-    'supports' => array('title', 'thumbnail'), // Added 'thumbnail' for images
+    'supports' => array('title', 'thumbnail'), 
     'rewrite'  => array('slug' => 'portfolio'),
     'public'   => true,
-    'taxonomies' => array('category'), // This enables the standard Category box
+    'taxonomies' => array('category'), 
     'labels'   => array(
        'add_new'       => _x('Add New', 'Portfolio item'),
        'name'          => 'Portfolio',

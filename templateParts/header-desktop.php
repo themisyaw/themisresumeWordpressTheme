@@ -1,7 +1,7 @@
 <div class="row mx-0 py-4 bg-light">
     <div class="col-3 p-0 mb-3 bg-light list-group-item d-flex justify-content-center align-items-center border-0 text-center py-2">
         <?php 
-        $photo = get_field('personal_photo'); // Gets the Array from ACF
+        $photo = get_field('personal_photo'); 
         
         if ( !empty($photo) ): ?>
             <img src="<?php echo esc_url($photo['url']); ?>" 
@@ -13,9 +13,9 @@
     </div>
     <div class="col">
         <h2 class="mx-4 my-4 border border-top-0 border-left-0 border-right-0 pb-2 text-start stay-black"><?php echo the_title() ?></h2>
-        <!-- <h5 class="gray1 mx-4">
+        
             <?php echo the_field('small_description') ?>
-        </h5>  -->
+       
         <div class="row mx-4 my-4">
                 <button class="px-4 py-2 mr-4  bg-white border-0 text-center shadow active-filter  rounded educationBtn">Education</button>
                 <button class="px-4 py-2 mx-4  bg-white border-0 text-center shadow   rounded workexperiencebtn">Work Experience</button>

@@ -1,57 +1,8 @@
 <?php
-require get_theme_file_path('/route/test-route.php');
-// require get_theme_file_path('/route/grocery-route.php');
+
+require get_theme_file_path('/route/workExperience-route.php');
+require get_theme_file_path('/route/portfolio-route.php');
 require get_theme_file_path('/custom-post-types/custom_post_types.php');
-
-function register_portfolio_taxonomy() {
-    register_taxonomy('portfolio_type', 'portfolio', array(
-        'label' => 'Portfolio Categories',
-        'rewrite' => array('slug' => 'portfolio-type'),
-        'hierarchical' => true, 
-        'show_admin_column' => true,
-    ));
-}
-add_action('init', 'register_portfolio_taxonomy');
-
-add_action('rest_api_init', function () {
-    register_rest_route('custom/v1', '/portfolio', array(
-        'methods' => 'GET',
-        'callback' => 'get_portfolio_items',
-    ));
-});
-
-function get_portfolio_items($data) {
-    $args = array(
-        'post_type' => 'portfolio',
-        'posts_per_page' => -1,
-    );
-
-    if (isset($data['category']) && $data['category'] !== 'All') {
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'portfolio_type',
-                'field'    => 'slug',
-                'terms'    => $data['category'],
-            ),
-        );
-    }
-
-    $posts = get_posts($args);
-    $results = [];
-
-    foreach ($posts as $post) {
-        $results[] = [
-            'id'          => $post->ID,
-            'title'       => get_the_title($post->ID),
-            'description' => get_field('description', $post->ID),
-            'img_url'     => get_the_post_thumbnail_url($post->ID, 'medium_large'),
-            'github'      => get_field('github', $post->ID),
-            'live_url'    => get_field('live_view', $post->ID),
-        ];
-    }
-    return $results;
-}
-
 
 
 function resumeCV_files() {
@@ -59,8 +10,8 @@ function resumeCV_files() {
   // css style
   wp_enqueue_style('main-resumeCV-styles', get_theme_file_uri('/src/css/header.css'));
   wp_enqueue_style('workExperience-resumeCV-styles', get_theme_file_uri('/src/css/workExperience.css'));
-  wp_enqueue_style('skills-resumeCV-styles', get_theme_file_uri('/src/css/skills.css'));
   wp_enqueue_style('portfolio-resumeCV-styles', get_theme_file_uri('/src/css/portfolio.css'));
+  wp_enqueue_style('bottom-menu-resumeCV-styles', get_theme_file_uri('/src/css/bottom-menu.css'));
   
   //js file 
   wp_enqueue_script('main-resumeCV-js', get_theme_file_uri('/src/js/index.js'), array('jquery'), '1.0', true);
@@ -87,6 +38,8 @@ function add_module_attribute($tag, $handle, $src) {
 }
 add_filter('script_loader_tag', 'add_module_attribute', 10, 3);
 
+
+// Display custom columns to the work experience post type in the admin dashboard
 function addCostumFields($columns){
   $columns['location'] = __( 'Location','custom-plugin');
   $columns['company_name'] = __( 'Company','custom-plugin');
@@ -124,6 +77,7 @@ function showCustomColumn_educationandtraining($column){
   }
 }
 add_action('manage_educationandtraining_posts_custom_column','showCustomColumn_educationandtraining');
+
 
 function add_custom_columns_driving_licence($columns) {
   

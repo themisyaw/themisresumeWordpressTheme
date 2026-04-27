@@ -9,19 +9,19 @@ class ScrollSpy {
         this.isScrolling = false; 
 
         if (this.navLinks.length > 0) {
-            this.setInitialActive(); // Highlight the first item immediately
+            this.setInitialActive(); 
             this.init();
         }
     }
 
-    // New: Logic to set the first item as active on load
+    
     setInitialActive() {
         const hash = window.location.hash;
         if (hash) {
-            // If the user arrived via a link like mysite.com/#portfolio
+           
             this.updateActiveState(hash.replace('#', ''));
         } else {
-            // Otherwise, default to the first link in the menu
+           
             const firstId = this.navLinks[0].getAttribute('href').replace('#', '');
             this.updateActiveState(firstId);
         }

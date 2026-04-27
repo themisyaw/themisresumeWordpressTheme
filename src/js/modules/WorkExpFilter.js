@@ -68,7 +68,7 @@ class WorkExpFilter {
                 this.WorkExpTimeline.insertAdjacentHTML("beforeend", element);
             });
 
-            // Hand off the animation work to the Animator module
+           
             Animator.observeAndShow('.inner-content');
 
         } catch (error) {

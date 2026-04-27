@@ -6,15 +6,15 @@ class ThemeToggle {
     }
 
     init() {
-        // 1. Set initial theme
+       
         if (this.currentTheme) {
             document.documentElement.setAttribute('data-theme', this.currentTheme);
         } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // Default to dark if OS is dark
+           
             document.documentElement.setAttribute('data-theme', 'dark');
         }
 
-        // 2. Add Event Listener
+       
         if (this.btn) {
             this.btn.addEventListener('click', () => this.toggle());
         }

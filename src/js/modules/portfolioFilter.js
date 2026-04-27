@@ -41,13 +41,18 @@ class PortfolioFilter {
                         <div class="col-12 p-4">
                            <div class="p-2 text-secondary">${item.description}</div>
                         </div>
-                        <div class="my-3 text-center d-flex gap-2">
-                            <a href="${item.github}" class="btn btn-dark m-2 px-3" target="_blank">
-                                Code on GitHub
-                            </a>
-                            <a href="${item.live_url}" class="btn btn-dark m-2 px-3" target="_blank">
-                                Live Project
-                            </a>
+                       <div class="my-3 text-center d-flex gap-2">
+                            ${item.github ? `
+                                <a href="${item.github}" class="btn btn-dark m-2 px-3" target="_blank">
+                                    <i class="fa fa-github"></i> Code on GitHub
+                                </a>
+                            ` : ''}
+
+                            ${item.live_url ? `
+                                <a href="${item.live_url}" class="btn btn-dark m-2 px-3" target="_blank">
+                                    <i class="fa fa-external-link"></i> Live Project
+                                </a>
+                            ` : ''}
                         </div>
                     </div>
                 </li>`;

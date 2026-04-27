@@ -1,6 +1,6 @@
 <?php
-add_action('rest_api_init', 'register_custom_route');
 
+add_action('rest_api_init', 'register_custom_route');
 function register_custom_route() {
     register_rest_route('custom/v1', '/posts', array(
         'methods'  => 'GET',
@@ -8,6 +8,7 @@ function register_custom_route() {
         'permission_callback' => '__return_true' 
     ));
 }
+
 
 function workExperince_by_category(WP_REST_Request $request) {
     $category = $request->get_param('category'); 

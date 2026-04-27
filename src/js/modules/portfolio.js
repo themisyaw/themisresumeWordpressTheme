@@ -43,10 +43,10 @@ class Portfolio {
    
     toggleContent(e) {
        
-        const buttonID = e.target.closest('.collapsible-btn').id // Get the button ID
-        const postID = buttonID.replace('btn-toggle-', ''); // Extract the post ID
-        const contentID = `content-toggle-${postID}`; // Construct the content ID
-        const collapsibleContent = document.querySelector(`#${contentID}`); // Get the content element
+        const buttonID = e.target.closest('.collapsible-btn').id 
+        const postID = buttonID.replace('btn-toggle-', ''); 
+        const contentID = `content-toggle-${postID}`; 
+        const collapsibleContent = document.querySelector(`#${contentID}`); 
     
         if (!collapsibleContent) {
             console.error('No collapsible content found for ID:', contentID);

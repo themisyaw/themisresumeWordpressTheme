@@ -37,25 +37,12 @@ body {
   /* padding-left:5%; */
   color:#222222;
   height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.bottomMenu a i {
-  color: #ffffff;
-  text-shadow: 0 0 10px #626262;
-}
-.bottomMenu ul li{
-  background: none!important;
-}
-.bottomMenu ul {
-  
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.17);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(5px);
 
-}
 
 ul{
   padding-left: 1rem;
@@ -113,10 +100,7 @@ li::marker {
     --theme-switcher-bg: #ffffff;
     --ul-list-mobile-menu-bg:#0000008a;
 }
-/* .filter-btn {
-    background-color: var(--btn-bg) !important;
-    color: var(--btn-text) !important;
-} */
+
 .active-filter{
   background-color: #222222!important;
   color:var(--btn-bg-fixed)!important;
@@ -125,32 +109,15 @@ li::marker {
 }
 
 
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 .shadow {
     background-color: var(--card-bg) ;
     box-shadow: var(--shadow) ;
 }
-/* .shadow button {
-    background-color: var(--card-bg) !important;
-    box-shadow: var(--shadow) !important;
-} */
 
 h5, h6, .black2 {
     color: var(--text-color) !important;
 }
-#menu a.active i {
 
-  text-shadow: 0 0 10px #009aff!important;
-}
-.mobile-width{
-  width: 60%;
-}
 
 ul.list-group {
   background-color: var(--ul-list-mobile-menu-bg);
@@ -186,3 +153,16 @@ ul.list-group li i {
   color: #ffffff; 
 }
 
+.smallFonts{
+  font-size: 14px;
+}
+button:focus {
+  outline: none;
+  
+}
+
+@media (min-width: 992px) {
+  .responsive-font {
+      font-size: 16px;  
+  }
+}
