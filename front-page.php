@@ -4,7 +4,7 @@
 
 <button id="theme-switch" class=" btn-sm border-0 position-fixed top-0 start-0 m-1 z-3">
     <span class="dark-icon">🌙</span>
-    <span class="light-icon">☀️</span>
+    <span class="light-icon">☀️3</span>
 </button>
 <div class="d-block bg-light d-md-none">
     <?php get_template_part( 'templateParts/header-mobile' ); ?>
