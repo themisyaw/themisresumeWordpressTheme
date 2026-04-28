@@ -6,7 +6,7 @@
     display: flex;
   }
   .portfolioitem ul{
-    padding-left: 0px;
+    padding-left: 0px!important;
   }
 .portfolioitem ul li::before {
 
