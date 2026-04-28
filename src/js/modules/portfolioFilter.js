@@ -38,7 +38,7 @@ class PortfolioFilter {
                         </div>
                     </div>  
                     <div class="row m-0 border-top justify-content-center collapsible-content" id="content-toggle-${item.id}" style="max-height: 0; overflow: hidden; transition: all 0.4s ease;">
-                        <div class="col-12 p-4">
+                        <div class="col-12">
                            <div class="p-2 text-secondary">${item.description}</div>
                         </div>
                        <div class="my-3 text-center d-flex gap-2">

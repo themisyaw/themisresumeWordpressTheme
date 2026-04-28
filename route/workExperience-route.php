@@ -17,8 +17,8 @@ function workExperince_by_category(WP_REST_Request $request) {
         'post_type'      => 'workexperience',
         'posts_per_page' => -1,
         'meta_key'       => 'from',
-        'orderby'        => 'meta_value',
-        'order'          => 'ASC',
+        'orderby'        => 'meta_value_num', // Treat the date as a number for precision
+        'order'          => 'DESC',           // Newest to oldest
     );
 
     // FIX: Use strcasecmp for a safer "All" check
