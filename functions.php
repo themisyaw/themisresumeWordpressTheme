@@ -4,7 +4,15 @@ require get_theme_file_path('/route/workExperience-route.php');
 require get_theme_file_path('/route/portfolio-route.php');
 require get_theme_file_path('/custom-post-types/custom_post_types.php');
 
-
+function register_skills_taxonomy() {
+    register_taxonomy('skill_category', 'skills', array(
+        'label'        => 'Skill Categories',
+        'rewrite'      => array('slug' => 'skill-category'),
+        'hierarchical' => true, // Set to true to act like standard categories
+        'show_in_rest' => true, // Enables Gutenberg support
+    ));
+}
+add_action('init', 'register_skills_taxonomy');
 function resumeCV_files() {
   
   // css style
