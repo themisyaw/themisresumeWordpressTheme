@@ -1,4 +1,4 @@
-import Animator from './animator.js';
+import Animator from './animator.js?v=2';
 
 class PortfolioFilter {
     constructor() {

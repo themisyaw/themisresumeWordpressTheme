@@ -14,15 +14,15 @@ function register_skills_taxonomy() {
 }
 add_action('init', 'register_skills_taxonomy');
 function resumeCV_files() {
-  
-  // css style
-  wp_enqueue_style('main-resumeCV-styles', get_theme_file_uri('/src/css/header.css'));
-  wp_enqueue_style('workExperience-resumeCV-styles', get_theme_file_uri('/src/css/workExperience.css'));
-  wp_enqueue_style('portfolio-resumeCV-styles', get_theme_file_uri('/src/css/portfolio.css'));
-  wp_enqueue_style('bottom-menu-resumeCV-styles', get_theme_file_uri('/src/css/bottom-menu.css'));
-  
-  //js file 
-  wp_enqueue_script('main-resumeCV-js', get_theme_file_uri('/src/js/index.js'), array('jquery'), '1.0', true);
+
+  // css style - versioned by file mtime so browsers pick up changes instead of caching for a week
+  wp_enqueue_style('main-resumeCV-styles', get_theme_file_uri('/src/css/header.css'), array(), filemtime(get_theme_file_path('/src/css/header.css')));
+  wp_enqueue_style('workExperience-resumeCV-styles', get_theme_file_uri('/src/css/workExperience.css'), array(), filemtime(get_theme_file_path('/src/css/workExperience.css')));
+  wp_enqueue_style('portfolio-resumeCV-styles', get_theme_file_uri('/src/css/portfolio.css'), array(), filemtime(get_theme_file_path('/src/css/portfolio.css')));
+  wp_enqueue_style('bottom-menu-resumeCV-styles', get_theme_file_uri('/src/css/bottom-menu.css'), array(), filemtime(get_theme_file_path('/src/css/bottom-menu.css')));
+
+  //js file - same, versioned by mtime
+  wp_enqueue_script('main-resumeCV-js', get_theme_file_uri('/src/js/index.js'), array('jquery'), filemtime(get_theme_file_path('/src/js/index.js')), true);
 
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
   wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');

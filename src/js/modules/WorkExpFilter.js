@@ -1,5 +1,5 @@
 
-import Animator from './animator.js';
+import Animator from './animator.js?v=2';
 class WorkExpFilter {
     constructor() {
         this.WorkExpTimeline = document.querySelector('.workexp-timeline');
