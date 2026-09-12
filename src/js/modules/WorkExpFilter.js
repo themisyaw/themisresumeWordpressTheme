@@ -20,8 +20,7 @@ class WorkExpFilter {
             this.WorkExpTimeline.innerHTML = '';
 
             posts.forEach(post => {
-                const isCurrent = (post.to && post.to.current && post.to.current[0] === 'Current');
-                const dates = isCurrent ? `${post.from} – present` : `${post.from} – ${post.to}`;
+                const dates = post.to ? `${post.from} – ${post.to}` : `${post.from} – present`;
 
                 const element = `
                 <li class="entry inner-content">
