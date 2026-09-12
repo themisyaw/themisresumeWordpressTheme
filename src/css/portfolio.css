@@ -71,25 +71,9 @@ color: #222222;
   margin-bottom: 18px;
   cursor: pointer;
 }
-.mockup-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 12px;
-  background: var(--chip-bg);
-  border-bottom: 1px solid var(--line);
-}
-.mockup-bar .dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--line);
-}
-.mockup-url {
-  margin-left: 8px;
-  font-size: 11px;
-  color: var(--faint);
-}
 .mockup-preview {
-  height: 160px;
+  height: 190px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,9 +81,27 @@ color: #222222;
   font-size: 28px;
   color: var(--accent);
 }
-.mockup-preview img {
-  width: 100%; height: 100%;
+/* no photo yet: quiet placeholder in the site's own tint, no browser-chrome dressing */
+.mockup-preview .placeholder {
+  color: var(--accent);
+  opacity: .8;
+}
+/* real photo: shown in full via a soft blurred backdrop of itself, never cropped, never letterboxed */
+.mockup-preview .mockup-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(20px) brightness(0.88);
+  transform: scale(1.15);
+}
+.mockup-preview .mockup-fg {
+  position: relative;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  z-index: 1;
 }
 
 .proj-title {

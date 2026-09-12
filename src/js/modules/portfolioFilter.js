@@ -21,20 +21,14 @@ class PortfolioFilter {
             this.portfolioTimeline.innerHTML = '';
 
             items.forEach(item => {
-                let host = 'project.local';
-                if (item.live_url) {
-                    try { host = new URL(item.live_url).hostname; } catch (e) {}
-                }
-
                 const element = `
                 <li class="proj fade-in-element">
                     <div class="collapsible-btn" id="btn-toggle-${item.id}">
                         <div class="mockup">
-                            <div class="mockup-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mockup-url">${host}</span></div>
                             <div class="mockup-preview">
                                 ${item.img_url
-                                    ? `<img src="${item.img_url}" alt="${item.title}">`
-                                    : `<i class="fa fa-code" aria-hidden="true"></i>`
+                                    ? `<img class="mockup-bg" src="${item.img_url}" alt="" aria-hidden="true"><img class="mockup-fg" src="${item.img_url}" alt="${item.title}">`
+                                    : `<i class="fa fa-code placeholder" aria-hidden="true"></i>`
                                 }
                             </div>
                         </div>
