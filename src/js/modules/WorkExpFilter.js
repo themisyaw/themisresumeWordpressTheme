@@ -2,7 +2,7 @@
 import Animator from './animator.js';
 class WorkExpFilter {
     constructor() {
-        this.WorkExpTimeline = document.querySelector('.timeline');
+        this.WorkExpTimeline = document.querySelector('.workexp-timeline');
         this.addCategoryClickListener();
         this.get_workExp('All');
     }
@@ -21,48 +21,13 @@ class WorkExpFilter {
 
             posts.forEach(post => {
                 const isCurrent = (post.to && post.to.current && post.to.current[0] === 'Current');
-                
+                const dates = isCurrent ? `${post.from} – present` : `${post.from} – ${post.to}`;
+
                 const element = `
-                <li class="row my-5 pl-2"> 
-                    <div class="col p-0 inner-content"> <div class="p-4 rounded shadow">
-                            <div class="col-12 p-0 justify-content-start">
-                                <h4 class="black2 bold pb-4">${post.title}</h4>                    
-                            </div>
-                            <div class="col px-0">
-                                <div class="row col-12">
-                                    <h6 class="bold black2 responsive-font">From |</h6>
-                                    <h6 class="gray2 pl-1 responsive-font">${post.from}</h6>
-                                </div>
-                                ${isCurrent 
-                                    ? `<div class="col p-0"><h6 class="bold black2 responsive-font">Current</h6></div>`
-                                    : `<div class="row col-12">
-                                          <h6 class="bold black2 responsive-font">To |</h6>
-                                          <h6 class="gray2 pl-1 responsive-font">${post.to}</h6>
-                                       </div>` 
-                                }
-                            </div> 
-                            <div class="col px-0 pt-3 mt-2">
-                                <div class="col-12">
-                                    <div class="row">
-                                        <h6 class="bold black2 responsive-font">Company | </h6>
-                                        <h6 class="gray2 mr-3 pl-1 responsive-font">${post.company}</h6>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row">
-                                        <h6 class="bold black2 responsive-font">Location | </h6>
-                                        <h6 class="gray2 pl-1 responsive-font">${post.location}</h6>
-                                    </div>
-                                </div>            
-                            </div>
-                            <div class="col p-0 pt-3 mt-2">
-                                <div class="col p-0">
-                                    <h6 class="bold black2">Description</h6>
-                                    ${post.description}
-                                </div>
-                            </div>                
-                        </div>              
-                    </div>
+                <li class="entry inner-content">
+                    <h5 class="black2 bold m-0">${post.title}<span class="entry-co"> — ${post.company}</span></h5>
+                    <div class="entry-meta">${post.location} · ${dates}</div>
+                    <div class="entry-desc">${post.description}</div>
                 </li>`;
 
                 this.WorkExpTimeline.insertAdjacentHTML("beforeend", element);

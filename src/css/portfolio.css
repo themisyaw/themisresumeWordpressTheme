@@ -38,3 +38,90 @@ color: #222222;
 .collapsible-content p {
   padding: 10px 0;
 }
+
+.filter-btn {
+  font-size: 13px !important;
+  font-weight: 600;
+  border-radius: 20px !important;
+  padding: 7px 16px !important;
+  color: var(--text-color) !important;
+}
+.filter-btn.active-filter {
+  color: var(--paper) !important;
+}
+
+.proj {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.proj:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.mockup {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+.mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  background: var(--chip-bg);
+  border-bottom: 1px solid var(--line);
+}
+.mockup-bar .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--line);
+}
+.mockup-url {
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--faint);
+}
+.mockup-preview {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cat-bg);
+  font-size: 28px;
+  color: var(--accent);
+}
+.mockup-preview img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+}
+
+.proj-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+}
+.proj-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 10px;
+}
+.proj-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.proj-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 1px;
+}
+.proj-link:hover { color: var(--accent); border-color: var(--accent); }

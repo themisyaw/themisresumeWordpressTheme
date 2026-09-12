@@ -21,38 +21,30 @@ class PortfolioFilter {
             this.portfolioTimeline.innerHTML = '';
 
             items.forEach(item => {
-                const element = `
-                <li class="my-5 fade-in-element shadow portfolioitem overflow-hidden border-0"> 
-                    <div class="row m-0 rounded collapsible-btn" id="btn-toggle-${item.id}" style="cursor: pointer;">
-                        <div class="col-md-6 p-0 position-relative portfolio-image-container" style="min-height:200px;">
-                            ${item.img_url 
-                                ? `<img class="img-fluid rounded w-100 h-100" style="object-fit:contain;" src="${item.img_url}" alt="${item.title}">`
-                                : `<div class="h-100 w-100 d-flex align-items-center justify-content-center bg-light"><i class="fa fa-code fa-2x text-muted opacity-50"></i></div>`
-                            }
-                        </div>
-                        <div class="col-md-5 p-2 d-flex flex-column justify-content-center">
-                            <h5 class="text-start border-secondary p-3 border-left m-0 black2 bold">${item.title}</h5> 
-                        </div>
-                        <div class="col-md-1 p-0 align-items-center justify-content-center d-flex">
-                            <i class="fa fa-chevron-down text-secondary" aria-hidden="true"></i>
-                        </div>
-                    </div>  
-                    <div class="row m-0 border-top justify-content-center collapsible-content" id="content-toggle-${item.id}" style="max-height: 0; overflow: hidden; transition: all 0.4s ease;">
-                        <div class="col-12">
-                           <div class="p-2 text-secondary">${item.description}</div>
-                        </div>
-                       <div class="my-3 text-center d-flex gap-2">
-                            ${item.github ? `
-                                <a href="${item.github}" class="btn btn-dark m-2 px-3" target="_blank">
-                                    <i class="fa fa-github"></i> Code on GitHub
-                                </a>
-                            ` : ''}
+                let host = 'project.local';
+                if (item.live_url) {
+                    try { host = new URL(item.live_url).hostname; } catch (e) {}
+                }
 
-                            ${item.live_url ? `
-                                <a href="${item.live_url}" class="btn btn-dark m-2 px-3" target="_blank">
-                                    <i class="fa fa-external-link"></i> Live Project
-                                </a>
-                            ` : ''}
+                const element = `
+                <li class="proj fade-in-element">
+                    <div class="collapsible-btn" id="btn-toggle-${item.id}">
+                        <div class="mockup">
+                            <div class="mockup-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mockup-url">${host}</span></div>
+                            <div class="mockup-preview">
+                                ${item.img_url
+                                    ? `<img src="${item.img_url}" alt="${item.title}">`
+                                    : `<i class="fa fa-code" aria-hidden="true"></i>`
+                                }
+                            </div>
+                        </div>
+                        <h5 class="proj-title">${item.title}</h5>
+                    </div>
+                    <div class="collapsible-content" id="content-toggle-${item.id}" style="max-height: 0; overflow: hidden;">
+                        <div class="proj-desc">${item.description}</div>
+                        <div class="proj-links">
+                            ${item.live_url ? `<a href="${item.live_url}" class="proj-link" target="_blank">Live project ↗</a>` : ''}
+                            ${item.github ? `<a href="${item.github}" class="proj-link" target="_blank">Code ↗</a>` : ''}
                         </div>
                     </div>
                 </li>`;
@@ -61,7 +53,7 @@ class PortfolioFilter {
 
             
             this.addToggleEvents();
-            Animator.observeAndShow('.portfolioitem');
+            Animator.observeAndShow('.proj');
 
         } catch (error) {
             console.error('Portfolio load failed:', error);

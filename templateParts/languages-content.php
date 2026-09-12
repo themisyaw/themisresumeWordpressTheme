@@ -1,44 +1,30 @@
 
-<div class=" py-3 mt-4">
-  <h4 class=" pb-3 bold black2  text-center" id="languages">Languages</h4>
+<div id="languages">
+  <h2 class="py-4 text-center border-bottom mb-4">Languages</h2>
   <?php
     $languages = new WP_Query(array(
         'post_type'=>'languages'
     ));
     while($languages->have_posts()) {
-      $languages->the_post(); 
+      $languages->the_post();
       $is_mother_tongues = get_field('mother_tongues');
-      ?>       
-      <div class="py-1 my-2    rounded "> 
-        <h5 class="mb-2 black2 bold language_title"><?php the_title(); ?></h5>
-        <?php
-          if ($is_mother_tongues) {
-            echo '<div class="row py-1 px-4 col"><h6 class="gray2 ">Mother tongue</h6></div>';            
-          } else {
-          ?>
-            <div class="row py-1 px-4 col">
-              <h6 class="bold black2">Listening |</h6><span class="ml-1 gray2"><?php the_field('listening'); ?> </span>
-            </div>
-            <div class="row py-1 px-4 col">
-              <h6 class="bold black2">Reading |</h6><span class="ml-1 gray2"><?php the_field('reading'); ?> </span>
-            </div>
-            <div class="row py-1 px-4 col">
-            <h6 class="bold black2">Writing |</h6><span class="ml-1 gray2"><?php the_field('writing'); ?> </span>
-            </div>
-            <div class="row py-1 px-4 col">
-              <h6 class="bold black2">Spoken production |</h6><span class="ml-1 gray2"><?php the_field('spoken_production'); ?> </span>
-            </div>
-            <div class="row py-1 px-4 col">
-              <h6 class="bold black2">Spoken interaction |</h6><span class="ml-1 gray2"><?php the_field('spoken_interaction'); ?> </span>
-            </div>
-            <?php
-          }
-        ?> 
+      ?>
+      <div class="edu-block">
+        <h5 class="black2 bold m-0"><?php the_title(); ?></h5>
+        <?php if ($is_mother_tongues): ?>
+          <div class="gray2 smallFonts pt-1">Mother tongue</div>
+        <?php else: ?>
+          <div class="gray2 smallFonts pt-1">
+            Listening <?php the_field('listening'); ?> ·
+            Reading <?php the_field('reading'); ?> ·
+            Writing <?php the_field('writing'); ?> ·
+            Spoken production <?php the_field('spoken_production'); ?> ·
+            Spoken interaction <?php the_field('spoken_interaction'); ?>
+          </div>
+        <?php endif; ?>
       </div>
     <?php
     }
     wp_reset_postdata();
-
-    
   ?>
 </div>

@@ -6,8 +6,8 @@
 
       if ($certifications->have_posts()) {
         ?>
-        <div class="px-3 pb-2  my-5 rounded shadow"> 
-            <h4 class="text-left py-4 bold black" id="certifications"><i class="fa fa-graduation-cap fa-lg black2" aria-hidden="true"></i>  Certifications</h4>
+        <div class="pb-2 my-5" id="certifications">
+            <h2 class="py-4 text-center border-bottom mb-4">Certifications</h2>
             <ul class="px-0">
                 <?php
                 while ($certifications->have_posts()) {
